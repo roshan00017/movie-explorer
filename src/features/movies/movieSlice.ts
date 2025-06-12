@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getPopularMovies, searchMovies } from "./movieAPI";
+import { getPopularMovies, getTopRatedMovies, searchMovies } from "./movieAPI";
 import type { Movie } from "./movieType";
 
 interface MovieState {
@@ -20,6 +20,10 @@ export const fetchPopularMovies = createAsyncThunk(
 export const fetchSearchedMovies = createAsyncThunk(
   "movies/search",
   searchMovies
+);
+export const fetchTopRatedMovies = createAsyncThunk(
+  "movies/fetchTopRated",
+  getTopRatedMovies
 );
 
 const movieSlice = createSlice({

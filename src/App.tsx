@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import ThemeToggle from "./components/ThemeToggle";
 import Sidebar from "./components/Sidebar";
 import Watchlist from "./pages/WatchList";
+import PopularMovies from "./components/PopularMovies";
+import TopRatedMovies from "./components/TopRatedMovies";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/watchlist" element={<Watchlist />} />
+          <Route path="/popular" element={<PopularMovies />} />
+          <Route path="/top-rated" element={<TopRatedMovies />} />
         </Routes>
       </main>
     </div>
