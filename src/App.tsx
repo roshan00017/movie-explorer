@@ -1,21 +1,24 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ThemeToggle from "./components/ThemeToggle";
+import Sidebar from "./components/Sidebar";
+import Watchlist from "./pages/WatchList";
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white">
-        <div className="p-4 flex justify-between">
-          <h1 className="text-2xl font-bold">🎬 Movie Explorer</h1>
+    <div className="flex bg-white dark:bg-gray-800 text-black dark:text-white">
+      <Sidebar />
+      <main className="flex-1 p-4">
+        <div className="flex justify-end mb-4">
           <ThemeToggle />
         </div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/watchlist" element={<Watchlist />} />
         </Routes>
-      </div>
-    </Router>
+      </main>
+    </div>
   );
-};
+}
 
 export default App;
